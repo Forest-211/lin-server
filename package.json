@@ -1,0 +1,44 @@
+{
+    "name": "lin-blog-service",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon --exec babel-node src/app.js",
+        "webpack:debug": "node --inspect-brk ./node_modules/.bin/webpack --inline --progress",
+        "build": "cross-env NODE_ENV=prod webpack --config config/webpack.config.prod.js",
+        "dev": "cross-env NODE_ENV=dev nodemon --exec babel-node --inspect src/app.js",
+        "clean": "rimraf dist"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@koa/cors": "^3.1.0",
+        "@koa/router": "^10.0.0",
+        "koa": "^2.13.1",
+        "koa-body": "^4.2.0",
+        "koa-combine-routers": "^4.0.2",
+        "koa-compose": "^4.1.0",
+        "koa-compress": "^5.0.1",
+        "koa-helmet": "^6.1.0",
+        "koa-json": "^2.0.2",
+        "koa-static": "^5.0.0",
+        "require-directory": "^2.1.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.14.0",
+        "@babel/node": "^7.13.13",
+        "@babel/preset-env": "^7.14.0",
+        "babel-loader": "^8.2.2",
+        "clean-webpack-plugin": "^4.0.0-alpha.0",
+        "cross-env": "^7.0.3",
+        "nodemon": "^2.0.7",
+        "rimraf": "^3.0.2",
+        "terser-webpack-plugin": "^5.1.1",
+        "webpack": "^5.36.2",
+        "webpack-cli": "^4.6.0",
+        "webpack-merge": "^5.7.3",
+        "webpack-node-externals": "^3.0.0"
+    }
+}
