@@ -5,7 +5,7 @@ import helmet from 'koa-helmet';
 import josnUtil from 'koa-json';
 import statics from 'koa-static';
 import compress from 'koa-compress';
-import router from './routes/index';
+import initLoadRouter from './routes/index';
 
 const app = new Koa();
 
@@ -19,8 +19,9 @@ app.use(koaBody())
     .use(statics(`${process.cwd()}/public`))
     .use(cors())
     .use(helmet())
-    .use(josnUtil({ pretty: false, param: 'pretty' }))
-    .use(router());
+    .use(josnUtil({ pretty: false, param: 'pretty' }));
+
+initLoadRouter(app);
 
 const port = 3005;
 app.listen(port, () => console.log('服务启动在' + port + '端口'));

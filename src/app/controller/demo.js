@@ -12,6 +12,5 @@ class DemoController {
         };
     }
 }
-console.log('DemoController:', new DemoController());
 
 export default new DemoController();
